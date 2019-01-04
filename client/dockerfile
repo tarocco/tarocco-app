@@ -1,2 +1,3 @@
 FROM alpine:latest
+COPY dist dist
 CMD ["cp", "-a", "dist/.", "build-out/"]
