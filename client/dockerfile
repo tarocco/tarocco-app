@@ -1,3 +1,4 @@
 FROM alpine:latest
+WORKDIR /app/client
 COPY dist dist
 CMD ["cp", "-a", "dist/.", "build-out/"]
