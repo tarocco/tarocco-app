@@ -10,6 +10,13 @@ function createElementFromHTML(html) {
   return div.firstChild; 
 }
 
+function SetOverflow(value)
+{
+    let html_root = document.querySelector('html');
+    html_root.style.overflow = value ? 'initial' : 'hidden';
+        
+}
+
 async function State1Entry()
 {
     async function Reveal()
@@ -34,6 +41,7 @@ async function State1Entry()
     {
         let row = AppendLine.bind(this)('good');
         let size = parseFloat(getComputedStyle(row).fontSize);
+        row.style.minHeight = row.style.fontSize = size + 100;
         for(let i = 0; i < 10; i++)
         {            
             row.style.fontSize = size + Math.pow(i, 2);
@@ -65,6 +73,7 @@ async function State1Entry()
     
     async function Run()
     {
+        SetOverflow(false);
         let html_root = document.querySelector('html');
         html_root.style.backgroundColor = '#000';
         let main_screen = document.querySelector('.main-screen-turn-on');
@@ -107,6 +116,8 @@ async function State1Entry()
         }
         incoming_transmission.innerHTML = '';
         html_root.style.backgroundColor = '#000';
+        main_screen.style.transform = 'scale(1, 1)';
+        SetOverflow(true);
     }
     
     function AppendLine(value)
@@ -150,6 +161,7 @@ async function State1Entry()
             previous_row.removeChild(previous_input);
             previous_row.innerHTML += this.value;
             this.value = '';
+            this.scrollIntoView();
         }
     }
     

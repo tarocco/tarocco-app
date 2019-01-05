@@ -9,12 +9,6 @@ span.marker {
     color: #901;
 }
 
-#root {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
 ul.incoming-transmission {
     list-style-type: none;
     padding: 1em;
