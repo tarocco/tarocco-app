@@ -12,9 +12,9 @@ function createElementFromHTML(html) {
 
 function SetOverflow(value)
 {
-    let html_root = document.querySelector('html');
-    html_root.style.overflow = value ? 'initial' : 'hidden';
-        
+    document.body.style.overflow = value ? 'initial' : 'hidden';
+    document.body.style.width = value ? 'initial' : '100%';
+    document.body.style.height = value ? 'initial' : '100%';
 }
 
 async function State1Entry()
@@ -74,8 +74,8 @@ async function State1Entry()
     async function Run()
     {
         SetOverflow(false);
-        let html_root = document.querySelector('html');
-        html_root.style.backgroundColor = '#000';
+        document.body.style.cursor = 'none';
+        document.body.style.backgroundColor = '#000';
         let main_screen = document.querySelector('.main-screen-turn-on');
         let incoming_transmission = main_screen.querySelector('.incoming-transmission');
         main_screen.style.transform = 'scale(12, 12)';
@@ -95,12 +95,12 @@ async function State1Entry()
         await sleep(200);
         incoming_transmission.innerHTML = '';
         await sleep(1000);
-        html_root.style.backgroundColor = '#111';
+        document.body.style.backgroundColor = '#111';
         await sleep(2000);
         main_screen.style.transform = 'scale(1, 1)';
         incoming_transmission.innerHTML = '<li>INITIALIZATION ERROR</li>';
         await sleep(5000);
-        html_root.style.backgroundColor = '#110';
+        document.body.style.backgroundColor = '#110';
         incoming_transmission.style.color = '#FDA';
         for(let i = 0; i <= 24; i++)
         {
@@ -115,9 +115,10 @@ async function State1Entry()
             await sleep(20);
         }
         incoming_transmission.innerHTML = '';
-        html_root.style.backgroundColor = '#000';
+        document.body.style.backgroundColor = '#000';
         main_screen.style.transform = 'scale(1, 1)';
         SetOverflow(true);
+        document.body.style.cursor = 'initial';
     }
     
     function AppendLine(value)
