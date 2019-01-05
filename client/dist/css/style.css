@@ -1,0 +1,66 @@
+html {
+    background: #D41;
+    color: #EEE;
+    font-family: "x8y12pxTheStrongGamer", monospace;
+    font-size: 24px;
+}
+
+span.marker {
+    color: #901;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+ul.incoming-transmission {
+    list-style-type: none;
+    padding: 1em;
+    margin: 0;
+}
+ul.incoming-transmission li {
+    min-height: 24px;
+}
+
+ul.incoming-transmission input.input-line {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'x14y20pxScoreDozer';
+    src: url('x14y20pxScoreDozer.woff2') format('woff2'),
+        url('x14y20pxScoreDozer.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'x8y12pxTheStrongGamer';
+    src: url('x8y12pxTheStrongGamer.woff2') format('woff2'),
+        url('x8y12pxTheStrongGamer.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'x14y24pxHeadUpDaisy';
+    src: url('x14y24pxHeadUpDaisy.woff2') format('woff2'),
+        url('x14y24pxHeadUpDaisy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'x12y20pxScanLine';
+    src: url('x12y20pxScanLine.woff2') format('woff2'),
+        url('x12y20pxScanLine.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
