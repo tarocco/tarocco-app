@@ -3,9 +3,7 @@ body {
     color: #EEE;
     font-family: "x8y12pxTheStrongGamer", monospace;
     font-size: 24px;
-    margin: 0;  
-    min-width: 100%;
-    min-height: 100%;
+    margin: 0;
 }
 
 span.marker {

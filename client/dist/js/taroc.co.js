@@ -78,27 +78,31 @@ async function State1Entry()
         document.body.style.backgroundColor = '#000';
         let main_screen = document.querySelector('.main-screen-turn-on');
         let incoming_transmission = main_screen.querySelector('.incoming-transmission');
-        main_screen.style.transform = 'scale(12, 12)';
-        main_screen.style.transformOrigin = '10% 0%';
+        let main_screen__transform = 'scale(12, 12) ';
+        main_screen.style.transform = main_screen__transform;
+        main_screen.style.transformOrigin = '0% 0%';
+        main_screen.style.transform = main_screen__transform + 'translate(-50px, -0px)';
         await sleep(200);
-        main_screen.style.transformOrigin = '0% 30%';
+        main_screen.style.transform = main_screen__transform + 'translate(-100px, 50px)';
         await sleep(200);
-        main_screen.style.transformOrigin = '40% 0%';
+        main_screen.style.transform = main_screen__transform + 'translate(0px, -100px)';
         await sleep(200);
         for(let i = 0; i < 20; i++)
         {
-            let x = 10 + 0.1 * (i % 2);
-            main_screen.style.transformOrigin = `${x}% 60%`;
+            let x = 130 + 10 * (i % 2);
+            main_screen.style.transform = main_screen__transform + `translate(-${x}px, -60px)`;
             await sleep(10);
         }
-        main_screen.style.transformOrigin = '40% 30%';
+        main_screen.style.transform = main_screen__transform + 'translate(-140, -50px)';
         await sleep(200);
         incoming_transmission.innerHTML = '';
         await sleep(1000);
         document.body.style.backgroundColor = '#111';
         await sleep(2000);
         main_screen.style.transform = 'scale(1, 1)';
-        incoming_transmission.innerHTML = '<li>INITIALIZATION ERROR</li>';
+        var row = createElementFromHTML('<li>INITIALIZATION ERROR</li>');
+        row.style.textShadow = '1px 0px 0px rgba(255, 255, 255, 0.1), 3px 0px 1px rgba(255, 255, 255, 0.05), 5px 0px 1px rgba(255, 255, 255, 0.05), 7px 0px 1px rgba(255, 255, 255, 0.1)'
+        incoming_transmission.appendChild(row);
         await sleep(5000);
         document.body.style.backgroundColor = '#110';
         incoming_transmission.style.color = '#FDA';
@@ -109,7 +113,7 @@ async function State1Entry()
             {
                 main_screen.style.transformOrigin = '0% 0%';
                 main_screen.style.transform = 'scale(3, 3)';
-                incoming_transmission.style.color = '#600';
+                incoming_transmission.style.color = '#400';
                 incoming_transmission.innerHTML = '<li>YOU WILL NEVER MAKE IT OUT ALIVE</li>';
             }
             await sleep(20);
