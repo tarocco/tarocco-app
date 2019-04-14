@@ -1,61 +1,72 @@
 body {
-    background: #D41;
-    color: #EEE;
-    font-family: "x8y12pxTheStrongGamer", monospace;
-    font-size: 24px;
-    margin: 0;
+    top: 0;
+    font-family: 'SFUIText', sans-serif;
+    color: #EEEEEE;
+    background-color: #DD4411;
+    font-size: 150%;
+    padding: 0 0;
+    margin: 0 0;
+    min-width: 16em;
+    width: 100vw;
+    height: 100%;
+    cursor: none;
 }
 
-span.marker {
-    color: #901;
-}
-
-ul.incoming-transmission {
-    list-style-type: none;
-    padding: 1em;
-    margin: 0;
-}
-ul.incoming-transmission li {
-    min-height: 24px;
-}
-
-ul.incoming-transmission input.input-line {
-    font-family: inherit;
-    font-size: inherit;
+#main-heading,
+#main-heading a,
+#main-heading a:visited,
+nav a,
+nav a:visited {
     color: inherit;
-    background: transparent;
-    border: none;
-    padding: 0;
+    text-decoration-line: none;
 }
 
-@font-face {
-    font-family: 'x14y20pxScoreDozer';
-    src: url('x14y20pxScoreDozer.woff2') format('woff2'),
-        url('x14y20pxScoreDozer.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+#main-heading a:hover,
+nav a:hover {
+    color: #FFF;
 }
 
-@font-face {
-    font-family: 'x8y12pxTheStrongGamer';
-    src: url('x8y12pxTheStrongGamer.woff2') format('woff2'),
-        url('x8y12pxTheStrongGamer.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+#main-heading {
+    font-family: 'SFUIDisplay', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-@font-face {
-    font-family: 'x14y24pxHeadUpDaisy';
-    src: url('x14y24pxHeadUpDaisy.woff2') format('woff2'),
-        url('x14y24pxHeadUpDaisy.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+nav a {
+    font-weight: bold;
 }
 
-@font-face {
-    font-family: 'x12y20pxScanLine';
-    src: url('x12y20pxScanLine.woff2') format('woff2'),
-        url('x12y20pxScanLine.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+a {
+    color: inherit;
+}
+a:visited{
+    color: #ffd8d3;
+}
+
+section {
+    padding-top: 2em;
+}
+
+#content {
+    max-width: 24em;
+    margin: auto;
+}
+
+.centered{
+    display: inline;
+    text-align: center;
+}
+
+.cursor-img {
+    position: absolute;
+    background-image: url('../img/he jettison cursor.png');
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+#media,
+#contact {
+    display: none;
 }

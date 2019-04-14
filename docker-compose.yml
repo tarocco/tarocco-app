@@ -13,6 +13,7 @@ services:
             # TODO: build the nginx configuration into the image
             - ./nginx-dev/nginx-dev.conf:/etc/nginx/nginx.conf:ro
             - ./client-dist:/usr/share/nginx/html:ro
+            - ./static-files:/usr/share/nginx/html/static-files:ro
             - ./log/nginx-dev:/var/log/nginx
         ports:
             - "8080:8080"
