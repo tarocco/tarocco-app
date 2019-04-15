@@ -42,11 +42,6 @@ function Tarocco(_document)
         doc.body.addEventListener('mousemove', move);
     }
     
-    function StartBackgroundTask(func)
-    {
-        return new Worker(URL.createObjectURL(new Blob(['(' + func + ')()'])));
-    }
-    
     function eml1()
     {
         var style = doc.createElement('style');
