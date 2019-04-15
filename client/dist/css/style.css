@@ -6,7 +6,7 @@ body {
     font-size: 150%;
     padding: 0 0;
     margin: 0 0;
-    min-width: 16em;
+    min-width: 320px;
     width: 100vw;
     height: 100%;
     cursor: none;
