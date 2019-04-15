@@ -35,7 +35,6 @@ let current_section = nav_sections_map[current_section_id];
 if(typeof(current_section) !== 'undefined')
     show_section(current_section);
 
-
 let tarocco = Tarocco();
 let cursor_follower = document.querySelector('#cursor-0');
 tarocco.FollowCursor(cursor_follower);
