@@ -40,11 +40,4 @@ let tarocco = Tarocco();
 let cursor_follower = document.querySelector('#cursor-0');
 tarocco.FollowCursor(cursor_follower);
 
-let zoom_tree = document.createElement('div');
-zoom_tree.setAttribute('id', 'zoom-tree');
-document.body.appendChild(zoom_tree);
-
-let zoom_level = ZoomLevel(zoom_tree);
-zoom_level.Run()
-
 tarocco.eml1();

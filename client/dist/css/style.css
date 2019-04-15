@@ -78,6 +78,15 @@ section {
     display: none;
 }
 
+.flashy {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #000, #FFF, #000, #FFF, #000);
+  background-size: 282.84271247461900976033774484194%;
+  animation: cool 0.2s linear infinite;
+  animation-play-state: running;
+}
+
 #media,
 #contact {
     display: none;

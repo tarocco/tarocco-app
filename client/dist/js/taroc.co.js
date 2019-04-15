@@ -2,26 +2,28 @@ function Tarocco(_document)
 {
     var doc = _document || document;
     function FollowCursor(element_) {
-        var zoom = null;
         var has_moved = false;
-        function apply_zoom(z)
+        
+        function update(e)
         {
-            element_.style.transform = `scale(${1.0 / zoom})`;
+            element_.style.display = 'block';
+            element_.style.left = e.clientX + 'px';
+            element_.style.top = e.clientY + 'px';
+            element_.style.transform = `scale(${1.0 / window.devicePixelRatio})`;
             element_.style.transformOrigin = '0% 0%';
         }
         
-        function handle_zoom(e)
+        function hide()
         {
-            zoom = e.detail.level;
-            apply_zoom(zoom);
+            element_.style.display = 'none';
         }
         
         function enter(e)
         {
-            if(has_moved && zoom != null)
-                element_.style.display = 'block';
+            if(has_moved)
+                update(e);
             else
-                element_.style.display = 'none';
+                hide();
         }
         
         function leave(e)
@@ -32,16 +34,9 @@ function Tarocco(_document)
         function move(e)
         {
             has_moved = true;
-            if(zoom != null)
-            {
-                element_.style.display = 'block';
-                element_.style.left = e.clientX + 'px';
-                element_.style.top = e.clientY + 'px';
-                apply_zoom(zoom);
-            }
+            update(e);
         }
         
-        window.addEventListener('zoom-change', handle_zoom);
         doc.body.addEventListener('mouseenter', enter);
         doc.body.addEventListener('mouseleave', leave);
         doc.body.addEventListener('mousemove', move);
