@@ -1,72 +1,78 @@
-let _first = ' '.charCodeAt(0);
-// function encode(str) {
-//     return [...str].map(c => c.charCodeAt(0) - _first);
-// }
-
-function decode(arr) {
-    return arr.map(n => String.fromCharCode(n + _first)).join('');
-}
-
-for(let e of document.querySelectorAll('.eml-1')) {
-    (async() => {
-        let ct = [4940, 21860, 2487, 13954, 25793, 16510, 12876, 19907, 24680, 1393, 24680, 19907];
-        let pt = decode(ct.map((c) => RSA.decrypt(c, eml1_d, eml1_n).value));
-        e.innerHTML = pt;
-        e.setAttribute('href', `mailto:${pt}`)
-    })();
-}
-
-function mediaQueryMatches(style, property, r)
+function Tarocco(_document)
 {
-    let mq_tester = document.getElementById('mq-tester');
-    style.sheet.insertRule('@media (' + property + ':' + r + ') { #mq-tester ' + '{text-decoration: underline} }', 0);
-    let matched = window.getComputedStyle(mq_tester, null).textDecoration == 'underline';
-    style.sheet.deleteRule(0);
-    return matched;
-}
-
-function mediaQueryBinarySearch(property, unit, a, b, max_iter, epsilon)
-{
-    let style = document.createElement('style');
-    let mq_tester = document.createElement('div');
-    mq_tester.setAttribute('id', 'mq-tester');
-    document.body.appendChild(style);
-    document.body.appendChild(mq_tester);
-    function search(a, b, max_iter)
-    {
-        let mid = (a + b) / 2;
-        if (max_iter == 0 || b - a < epsilon)
-            return mid;
-        if (mediaQueryMatches(style, property, mid + unit))
-            return search(mid, b, max_iter - 1);
-        else
-            return search(a, mid, max_iter - 1);
-    }
-    let result = search(a, b, max_iter);
-    document.body.removeChild(style);
-    document.body.removeChild(mq_tester);
-    return result;
-}
-
-function getZoomLevel()
-{
-    let zoom = mediaQueryBinarySearch('min--moz-device-pixel-ratio', '', 0, 10, 6, 0.01);
-    zoom = zoom.toPrecision(3);
-    return zoom;
-}
-
-{
-    let zoom_level = getZoomLevel();
-    function update()
-    {
-        let z = getZoomLevel();
-        if(z != zoom_level)
+    var doc = _document || document;
+    function FollowCursor(element_) {
+        var zoom = null;
+        var has_moved = false;
+        function apply_zoom(z)
         {
-            zoom_level = z;
-            var zoom_event = new CustomEvent('zoom-change', { detail: { level: z } });
-            //console.log(zoom_event);
-            window.dispatchEvent(zoom_event);
+            element_.style.transform = `scale(${1.0 / zoom})`;
+            element_.style.transformOrigin = '0% 0%';
         }
+        
+        function handle_zoom(e)
+        {
+            zoom = e.detail.level;
+            apply_zoom(zoom);
+        }
+        
+        function enter(e)
+        {
+            if(has_moved && zoom != null)
+                element_.style.display = 'block';
+            else
+                element_.style.display = 'none';
+        }
+        
+        function leave(e)
+        {
+            element_.style.display = 'none';
+        }
+        
+        function move(e)
+        {
+            has_moved = true;
+            if(zoom != null)
+            {
+                element_.style.display = 'block';
+                element_.style.left = e.clientX + 'px';
+                element_.style.top = e.clientY + 'px';
+                apply_zoom(zoom);
+            }
+        }
+        
+        window.addEventListener('zoom-change', handle_zoom);
+        doc.body.addEventListener('mouseenter', enter);
+        doc.body.addEventListener('mouseleave', leave);
+        doc.body.addEventListener('mousemove', move);
     }
-    setInterval(update, 10);
+    
+    function StartBackgroundTask(func)
+    {
+        return new Worker(URL.createObjectURL(new Blob(['(' + func + ')()'])));
+    }
+    
+    function eml1()
+    {
+        var style = doc.createElement('style');
+        doc.body.appendChild(style);
+        style.sheet.insertRule('.eml-1 { display: block; text-indent: -99999px; line-height: 0; }', 0);
+        style.sheet.insertRule('.eml-1::after { display: block; text-indent: 0; line-height: initial; content: "decrypting email address..."; }', 0);
+        let task = new Worker('js/eml-1.js');
+        task.onmessage = (e) => {
+            let pt = e.data;
+            emls = doc.querySelectorAll('.eml-1');
+            for(let e of emls)
+            {    
+                e.innerHTML = pt;
+                e.setAttribute('href', `mailto:${pt}`)
+            }
+            doc.body.removeChild(style);
+        };
+    }
+    
+    return {
+        eml1: eml1,
+        FollowCursor: FollowCursor
+    };
 }

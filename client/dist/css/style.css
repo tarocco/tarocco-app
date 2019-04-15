@@ -38,6 +38,7 @@ nav a {
 
 a {
     color: inherit;
+    cursor: none;
 }
 a:visited{
     color: #ffd8d3;
@@ -57,6 +58,16 @@ section {
     text-align: center;
 }
 
+#cursor-space {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .cursor-img {
     position: absolute;
     background-image: url('../img/he jettison cursor.png');
@@ -64,6 +75,7 @@ section {
     height: 100px;
     background-repeat: no-repeat;
     pointer-events: none;
+    display: none;
 }
 
 #media,

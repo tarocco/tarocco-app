@@ -35,52 +35,16 @@ let current_section = nav_sections_map[current_section_id];
 if(typeof(current_section) !== 'undefined')
     show_section(current_section);
 
-let follow_cursor = (function() {
-    var element_ = null;
-    var zoom = getZoomLevel();
-    
-    function apply_zoom(z)
-    {
-        element_.style.transform = `scale(${1.0 / zoom})`;
-        element_.style.transformOrigin = '0% 0%';
-    }
-    
-    function handle_zoom(e)
-    {
-        zoom = e.detail.level;
-        apply_zoom(zoom);
-    }
-    
-    function enter(e)
-    {
-        element_.style.display = 'block';
-    }
-    
-    function leave(e)
-    {
-        element_.style.display = 'none';
-    }
-    
-    function move(e)
-    {
-        element_.style.left = e.clientX + 'px';
-        element_.style.top = e.clientY + 'px';
-        apply_zoom(zoom);
-    }
-    
-    return {
-        init: function()
-        {
-            element_ = document.createElement('div');
-            element_.setAttribute('class', 'cursor-img');
-            element_.style.display = 'none';
-            document.body.appendChild(element_);
-            window.addEventListener('zoom-change', handle_zoom);
-            document.body.addEventListener('mouseenter', enter);
-            document.body.addEventListener('mouseleave', leave);
-            document.body.addEventListener('mousemove', move);
-        }
-    };
-}());
 
-let follower = follow_cursor.init();
+let tarocco = Tarocco();
+let cursor_follower = document.querySelector('#cursor-0');
+tarocco.FollowCursor(cursor_follower);
+
+let zoom_tree = document.createElement('div');
+zoom_tree.setAttribute('id', 'zoom-tree');
+document.body.appendChild(zoom_tree);
+
+let zoom_level = ZoomLevel(zoom_tree);
+zoom_level.Run()
+
+tarocco.eml1();
