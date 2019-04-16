@@ -6,7 +6,7 @@ body {
     font-size: 150%;
     padding: 0;
     margin: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     cursor: none;
 }
@@ -38,7 +38,7 @@ nav a:hover {
 
 #main-heading {
     font-family: 'SFUIDisplay', sans-serif;
-    margin: 8px 5px;
+    padding: 12px 5px;
 }
 
 #main-heading a {
@@ -74,8 +74,7 @@ section {
 }
 
 #content {
-    width: 400px;
-    padding: 10px;
+    width: 390px;
     margin: auto;
 }
 
