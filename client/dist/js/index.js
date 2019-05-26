@@ -85,21 +85,27 @@ async function load_media_player() {
     await load_script('snap-svg', 'js/snap.svg.js');
     await load_script('wptpa', 'js/wptpa_script.js');
     await load_script('playlists', 'js/playlists.js');
-    let player = $('section#media-section #media-player').tPlayer(
+    let wrapper = $('section#media-section #media-player');
+    let player_is_loaded = $('.wptpa_player', wrapper).length > 0;
+    if(!player_is_loaded)
     {
-        playlist: Playlists.Tracks,
-        playerBG: "#FFF",
-        playerTextCLR: "#F61",
-        buttonCLR: "#F61",
-        buttonActiveCLR: "#F61",
-        seekBarCLR: "#F61",
-        progressBarCLR: "#FFF",
-        timeCLR: "#FFF",
-        playlistBG: "#FFF",
-        playlistTextCLR: "#F61",
-        playlistCurBG: "#F61",
-        playlistTextCurCLR: "#FFF",
-    });
+        let player = wrapper.tPlayer(
+        {
+            playlist: Playlists.Tracks,
+            playerBG: "#FFF",
+            playerTextCLR: "#F61",
+            buttonCLR: "#F61",
+            buttonActiveCLR: "#F61",
+            seekBarCLR: "#F61",
+            progressBarCLR: "#FFF",
+            timeCLR: "#FFF",
+            playlistBG: "#FFF",
+            playlistTextCLR: "#F61",
+            playlistCurBG: "#F61",
+            playlistTextCurCLR: "#FFF",
+        });
+        wrapper.addClass('loaded');
+    }
 }
 
 function unload_media_player() {
@@ -114,7 +120,8 @@ function handle_hide_media_section(e) {
     unload_media_player();
 }
 
-let current_section_id = window.location.hash.substring(1);
+let current_section_id = window.location.hash.substring(1) + '-section';
+console.log(nav_sections_map);
 let current_section = nav_sections_map[current_section_id] || document.querySelector('section#home-section');
 let media_section = document.querySelector('section#media-section');
 show_section(current_section);
