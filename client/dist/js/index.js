@@ -121,12 +121,11 @@ function handle_hide_media_section(e) {
 }
 
 let current_section_id = window.location.hash.substring(1) + '-section';
-console.log(nav_sections_map);
 let current_section = nav_sections_map[current_section_id] || document.querySelector('section#home-section');
 let media_section = document.querySelector('section#media-section');
-show_section(current_section);
 media_section.addEventListener('show', handle_show_media_section);
 media_section.addEventListener('hide', handle_hide_media_section);
+show_section(current_section);
 
 let tarocco = Tarocco();
 let cursor_follower = document.querySelector('#cursor-0');
