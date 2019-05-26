@@ -81,10 +81,25 @@ a:visited{
 
 section {
     padding-top: 2em;
+    margin: auto;
+    width: 390px;
 }
 
-#content {
-    width: 390px;
+
+@media only screen and (min-width: 600px) {
+    section#media-section {
+        min-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    section#media-section {
+        min-width: 100%;
+    }
+}
+
+
+#top {
     margin: auto;
 }
 
@@ -113,6 +128,14 @@ section:not([id='home']){
     display: none;
 }
 
+.center-contents>*{
+    margin: auto;
+    width: 390px;
+}
+
+.center-text {
+    text-align: center;
+}
 
 .flashy {
   width: 100px;
