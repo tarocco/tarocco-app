@@ -6,9 +6,10 @@ function Tarocco(_document)
         
         function update(e)
         {
+            let rect = doc.body.getBoundingClientRect();
             element_.style.display = 'block';
-            element_.style.left = e.clientX + 'px';
-            element_.style.top = e.clientY + 'px';
+            element_.style.left = (e.clientX - rect.left) + 'px';
+            element_.style.top = (e.clientY - rect.top) + 'px';
             element_.style.transform = `scale(${1.0 / window.devicePixelRatio})`;
             element_.style.transformOrigin = '0% 0%';
         }

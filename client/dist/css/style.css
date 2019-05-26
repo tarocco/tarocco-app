@@ -123,6 +123,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
+    min-width: 390px;
     overflow: hidden;
     pointer-events: none;
 }
