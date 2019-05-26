@@ -842,9 +842,10 @@ function Snap(w, h) {
             return wrap(w);
         }
     }
-    w = w == null ? "100%" : w;
-    h = h == null ? "100%" : h;
-    return new Paper(w, h);
+    //w = w == null ? "100%" : w;
+    //h = h == null ? "100%" : h;
+    //return new Paper(w, h);
+    return { select: function(s) { return null; } };
 }
 Snap.toString = function () {
     return "Snap v" + this.version;
