@@ -109,7 +109,9 @@ async function load_media_player() {
 }
 
 function unload_media_player() {
-    $('section#media-section #media-player').empty();
+    let media_player = document.querySelector('section#media-section #media-player');
+    while(media_player.firstChild)
+        media_player.removeChild(media_player.firstChild);
 }
 
 function handle_show_media_section(e) {

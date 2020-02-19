@@ -4,4 +4,4 @@ function decode(arr) {
     let first = 32; // ' '.charCodeAt(0);
     return arr.map(n => String.fromCharCode(n + first)).join('');
 }
-postMessage(decode(ct.map((c) => RSA.decrypt(c, eml1_d, eml1_n).value)));
+postMessage(decode(ct.map((c) => RSA.decrypt(c, eml1_d, eml1_n).toJSNumber())));
