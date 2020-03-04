@@ -3,6 +3,14 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
+            "title": "Trance Tavern @ PLUNDERPARTY2012",
+            "audio": "media/mixes/PLUNDERPARTY2012 - Tarocco at the Trance Tavern.mp3",
+            "dwn": "media/mixes/PLUNDERPARTY2012 - Tarocco at the Trance Tavern.mp3",
+            "cover": "media/mixes/drunkendavid.jpg"
+        },
+        {
+            "type": "audio",
+            "artist": "Tarocco",
             "title": "Electronic Soundtrack Ep. 2",
             "audio": "media/mixes/Electronic Soundtrack 2.mp3",
             "dwn": "media/mixes/Electronic Soundtrack 2.mp3",
