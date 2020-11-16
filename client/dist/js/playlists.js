@@ -2,6 +2,14 @@ Playlists = {
     Tracks: [
         {
             "type": "audio",
+            "artist": "DeBisco & Tarocco",
+            "title": "BLOCKPARTY2012",
+            "audio": "media/tracks/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
+            "dwn": "media/tracks/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
+            "cover": "media/tracks/BLOCKPARTY2012.jpg"
+        },
+        {
+            "type": "audio",
             "artist": "Tarocco",
             "title": "Trance Tavern @ PLUNDERPARTY2012",
             "audio": "media/mixes/PLUNDERPARTY2012 - Tarocco at the Trance Tavern.mp3",
