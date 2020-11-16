@@ -4,9 +4,9 @@ Playlists = {
             "type": "audio",
             "artist": "DeBisco & Tarocco",
             "title": "BLOCKPARTY2012",
-            "audio": "media/tracks/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
-            "dwn": "media/tracks/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
-            "cover": "media/tracks/BLOCKPARTY2012.jpg"
+            "audio": "media/mixes/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
+            "dwn": "media/mixes/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
+            "cover": "media/mixes/BLOCKPARTY2012.jpg"
         },
         {
             "type": "audio",
