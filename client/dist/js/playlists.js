@@ -19,6 +19,14 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
+            "title": "pres. deadbun5 - DNA Lounge: So Stoked: Enter the Matrix (2019-03-22)",
+            "audio": "media/mixes/deadbun5 DNA SS-ETM 2019-03-22.mp3",
+            "dwn": "media/mixes/deadbun5 DNA SS-ETM 2019-03-22.mp3",
+            "cover": "media/mixes/DNA SS-ETM 2019-03-22.jpg"
+        },
+        {
+            "type": "audio",
+            "artist": "Tarocco",
             "title": "Electronic Soundtrack Ep. 2",
             "audio": "media/mixes/Electronic Soundtrack 2.mp3",
             "dwn": "media/mixes/Electronic Soundtrack 2.mp3",
