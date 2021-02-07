@@ -2,6 +2,14 @@ Playlists = {
     Tracks: [
         {
             "type": "audio",
+            "artist": "Tarocco",
+            "title": "Trance Selections - Then And Now (Winter 2020)",
+            "audio": "media/mixes/Trance Selections - Then And Now (Winter 2020).mp3",
+            "dwn": "media/mixes/Trance Selections - Then And Now (Winter 2020).mp3",
+            "cover": "media/mixes/trance selections - WINTER 2020.jpg"
+        },
+        {
+            "type": "audio",
             "artist": "DeBisco & Tarocco",
             "title": "BLOCKPARTY2012",
             "audio": "media/mixes/DeBisco & Tarocco @ BLOCKPARTY2012.mp3",
