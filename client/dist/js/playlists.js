@@ -3,7 +3,7 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
-            "title": "Virtual Paradise - Future Found",
+            "title": "Virtual Paradise: Future Found",
             "audio": "media/mixes/Tarocco @ Virtual Paradise - Future Found.mp3",
             "dwn": "media/mixes/Tarocco @ Virtual Paradise - Future Found.mp3",
             "cover": "media/mixes/Tarocco @ VP-FF 2021.jpg"
