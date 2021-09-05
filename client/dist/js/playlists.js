@@ -3,6 +3,30 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
+            "title": "TAROCCO @ ICC 2021",
+            "audio": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.mp3",
+            "dwn": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.mp3",
+            "cover": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.jpg"
+        },
+        {
+            "type": "audio",
+            "artist": "Tarocco",
+            "title": "TAROCCO @ ICC 2021",
+            "audio": "media/mixes/TAROCCO @ ICC 2021.mp3",
+            "dwn": "media/mixes/TAROCCO @ ICC 2021.mp3",
+            "cover": "media/mixes/TAROCCO @ ICC 2021.png"
+        },
+        {
+            "type": "audio",
+            "artist": "Tarocco",
+            "title": "POOLTOY EQUINOX 2021",
+            "audio": "media/mixes/TAROCCO @ POOLTOY EQUINOX 2021.mp3",
+            "dwn": "media/mixes/TAROCCO @ POOLTOY EQUINOX 2021.mp3",
+            "cover": "media/mixes/TAROCCO @ POOLTOY EQUINOX 2021.jpg"
+        },
+        {
+            "type": "audio",
+            "artist": "Tarocco",
             "title": "Virtual Paradise: Future Found",
             "audio": "media/mixes/Tarocco @ Virtual Paradise - Future Found.mp3",
             "dwn": "media/mixes/Tarocco @ Virtual Paradise - Future Found.mp3",
