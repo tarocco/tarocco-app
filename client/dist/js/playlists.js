@@ -3,7 +3,7 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
-            "title": "TAROCCO @ ICC 2021",
+            "title": "POOLPARTY2012 CAMP DAMP 2021",
             "audio": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.mp3",
             "dwn": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.mp3",
             "cover": "media/mixes/TAROCCO @ POOLPARTY2012 CAMP DAMP 2021.jpg"
@@ -11,7 +11,7 @@ Playlists = {
         {
             "type": "audio",
             "artist": "Tarocco",
-            "title": "TAROCCO @ ICC 2021",
+            "title": "ICC 2021",
             "audio": "media/mixes/TAROCCO @ ICC 2021.mp3",
             "dwn": "media/mixes/TAROCCO @ ICC 2021.mp3",
             "cover": "media/mixes/TAROCCO @ ICC 2021.png"
