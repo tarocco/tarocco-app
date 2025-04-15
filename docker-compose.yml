@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-    tarocco-client:
+    client:
         build: ./client
         volumes:
             - ./client-dist:/app/client/build-out
-    #tarocco-server:
+    #server:
     #    build: ./server
     nginx:
         image: nginx:mainline-alpine
